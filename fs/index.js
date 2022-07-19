@@ -22,17 +22,36 @@ console.log('Hello...')
 
 // utf8 is by default, callback will not have data - we are not reading data, we are writing it
 // before the callback, specify whate we are writing to the file
-fs.writeFile(path.join(__dirname, 'write.txt'), 'Nice to meet you', (err) => {
-    if(err) throw err;
-    console.log('Write complete');
-})
+// fs.writeFile(path.join(__dirname, 'write.txt'), 'Nice to meet you', (err) => {
+//     if(err) throw err;
+//     console.log('Write complete');
+// })
 // this created a new file!
 
 // updating a file, adding more content to it
-fs.appendFile(path.join(__dirname, 'apppend.txt'), 'testing text', (err) => {
+// fs.appendFile(path.join(__dirname, 'apppend.txt'), 'testing text', (err) => {
+//     if(err) throw err;
+//     console.log('Write complete');
+// })
+
+// we can also create a file, then immediately update it, and rename it... starting to look like callback hell
+// 30:05
+fs.writeFile(path.join(__dirname, 'write.txt'), 'Nice to meet you', (err) => {
     if(err) throw err;
     console.log('Write complete');
+
+    fs.appendFile(path.join(__dirname, 'write.txt'), '\n\nyes, it is', (err) => {
+        if(err) throw err;
+        console.log('Append complete');
+
+        fs.rename(path.join(__dirname, 'write.txt'), path.join(__dirname, 'newWrite.text'), (err) => {
+            if(err) throw err;
+            console.log('Rename complete');
+        })
+    })
+    
 })
+
 
 
 // exit on uncaught errors
