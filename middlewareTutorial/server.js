@@ -1,7 +1,23 @@
 const express = require('express');
 const app = express();
 const path = require('path');
+const { logger } = require('./middleware/logEvents')
 const PORT = process.env.PORT || 3500;
+
+//custom middleware logger - what we really want is to create a log file
+app.use(logger);
+
+// for handling form data, so when data comes in through URL, we can pull the data out as a parameter
+app.use(express.urlencoded({ extended: false }));
+
+// for json data - if submitted, need to be able to get that data out of submission
+app.use(express.json());
+
+// going to serve static files
+// the public folder is what we are going to put all of those static files (images) in so that they are available to the public
+// this is our set of directions so the app can find out static files
+// this is applied before our routes, it will search the public directory before it moves to these other routes
+app.use(express.static(path.join(__dirname, '/public')));
 
 // must begin with a slash, end with a slash, or be index.html - express supports regular expressions, the .html is optional
 app.get('^/$|index(.html)?', (req, res) => {

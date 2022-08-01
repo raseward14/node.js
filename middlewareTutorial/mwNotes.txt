@@ -1,1 +1,10 @@
-middleware is anything btw req and res to .next() is really middleware
+middleware is anything btw req and res to .next() is really middleware (route handler)
+
+3 TYPES: 
+1. built in middleware
+--app.use()
+--just like http methods (.get() .put() .post() .delete()), works as a waterfall
+--built in middleware does not need the next() called, its already built in
+2. custom middleware (we create ourselves)
+--custom logger
+3. middleware from 3rd parties
