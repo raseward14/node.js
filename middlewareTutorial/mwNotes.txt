@@ -8,3 +8,8 @@ middleware is anything btw req and res to .next() is really middleware (route ha
 2. custom middleware (we create ourselves)
 --custom logger
 3. middleware from 3rd parties
+--cors
+
+npm i cors
+const cors = require('cors'); in server.js
+come as soon as possible

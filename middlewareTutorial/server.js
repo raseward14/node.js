@@ -1,11 +1,16 @@
 const express = require('express');
 const app = express();
 const path = require('path');
-const { logger } = require('./middleware/logEvents')
+const cors = require('cors');
+// the curley braces are for importing functions
+const { logger } = require('./middleware/logEvents');
 const PORT = process.env.PORT || 3500;
 
 //custom middleware logger - what we really want is to create a log file
 app.use(logger);
+
+// cross origin resource sharing
+app.use(cors());
 
 // for handling form data, so when data comes in through URL, we can pull the data out as a parameter
 app.use(express.urlencoded({ extended: false }));

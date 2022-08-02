@@ -35,6 +35,7 @@ const logger = (req, res, next) => {
 }
 
 // module.exports = logEvents;
+// this is how we export functions
 module.exports = { logger, logEvents }
 
 

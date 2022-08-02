@@ -1,0 +1,8 @@
+20220802	07:18:08	65d19882-fd02-4c08-9112-e584ef523d79	GET	undefined	/
+20220802	07:18:08	be6a11d7-3a64-4b40-9d5b-d7adaffdcc15	GET	undefined	/css/style.css
+20220802	07:18:08	c02625e9-e896-4d65-857d-666174017d58	GET	undefined	/favicon.ico
+20220802	07:19:13	f94afea9-b1d1-42f5-8db5-2de22adcc9d4	GET	undefined	/
+20220802	07:19:13	098ba09d-1808-4b16-981c-0ab602d6771d	GET	undefined	/css/style.css
+20220802	07:20:25	4d3a3e58-e8b7-4b03-806c-bdeab8e976b3	GET	https://www.google.com	/
+20220802	07:24:20	1ab05580-f4e5-4a0e-9490-6a984f5ede00	GET	https://www.google.com	/
+20220802	07:57:17	73e7ad80-a560-42f7-bba4-af53c92c028e	GET	undefined	/css/style.css
