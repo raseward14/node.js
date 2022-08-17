@@ -6,3 +6,14 @@
 20220802	07:20:25	4d3a3e58-e8b7-4b03-806c-bdeab8e976b3	GET	https://www.google.com	/
 20220802	07:24:20	1ab05580-f4e5-4a0e-9490-6a984f5ede00	GET	https://www.google.com	/
 20220802	07:57:17	73e7ad80-a560-42f7-bba4-af53c92c028e	GET	undefined	/css/style.css
+20220817	07:43:49	9aac7803-b404-4948-8791-4569350ef046	OPTIONS	https://www.google.com	/
+20220817	07:43:49	46ba7cab-9410-40fb-a2cc-811d849b3bb4	GET	https://www.google.com	/
+20220817	07:44:45	a1146d97-8ae2-4c67-ad6c-5910443f6932	OPTIONS	https://www.google.com	/
+20220817	07:44:45	b6bdd1ea-6cb9-490e-9dc8-1c225bb00594	GET	https://www.google.com	/
+20220817	07:46:13	5687583c-06f5-4ad2-80bb-a20cf781552c	OPTIONS	https://www.google.com	/
+20220817	07:46:13	720ca4ef-a1a1-47bd-bcfa-dfc78e9a0ecd	GET	https://www.google.com	/
+20220817	07:49:57	7f2d47e3-beb6-4c09-8112-157d02b65573	GET	undefined	/
+20220817	07:49:57	03387d06-82b0-4385-bf80-6c3bd3910ce3	GET	undefined	/favicon.ico
+20220817	07:51:42	a8ac1a72-3d04-4cf1-9215-641bf97a4a16	GET	undefined	/
+20220817	07:51:43	41f1bb7e-e916-4396-b55b-9155769341ca	GET	undefined	/css/style.css
+20220817	07:51:43	da22652b-3664-4371-a385-e959406f057e	GET	undefined	/favicon.ico

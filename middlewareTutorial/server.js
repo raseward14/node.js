@@ -4,13 +4,30 @@ const path = require('path');
 const cors = require('cors');
 // the curley braces are for importing functions
 const { logger } = require('./middleware/logEvents');
+// this is the only function from the file, we dont need the curley braces
+const errorHandler = require('./middleware/errorHandler');
+
 const PORT = process.env.PORT || 3500;
 
 //custom middleware logger - what we really want is to create a log file
 app.use(logger);
 
-// cross origin resource sharing
-app.use(cors());
+// cross origin resource sharing - could change google to your domain - domains that can access the routes
+const whitelist = ['https://www.domain.com', 'http://127.0.0.1:5500', 'http://localhost:3500'];
+const corsOptions = {
+    origin: (origin, callback) => {
+        // indexes start at 0 meaning that -1 would not be included in the whitelist array
+        // during dev, we need to add the no origin possibility !origin - undefined or false
+        if(whitelist.indexOf(origin) !== -1 || !origin) {
+            callback(null, true)
+        } else {
+            callback(new Error('Not allowed by CORS'))
+        }
+    },
+    optionsSuccessStatus: 200
+}
+//once we've created the cors options, we pass them in here
+app.use(cors(corsOptions));
 
 // for handling form data, so when data comes in through URL, we can pull the data out as a parameter
 app.use(express.urlencoded({ extended: false }));
@@ -74,6 +91,16 @@ app.get('/*', (req, res) => {
     // it wont send a 404 status code, it will send a 200 bc its actually successfully finding our 404 page, serving exactly what we told it to
     // chain in the .status(404) method
 })
+
+// this needs to go at the end so that all routes have been tried before throwing this error
+// app.use(function (err, req, res, next) {
+//     // can display error stack, or message, or whatever
+//     console.error(err.stack)
+//     // sends the error status, 500 and the message to be displayed in the browser
+//     // sends the message to the browser
+//     res.status(500).send(err.message)
+// })
+app.use(errorHandler);
  
 app.listen(PORT, () => {
     console.log(`server running on port ${PORT}`)

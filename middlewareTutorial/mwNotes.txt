@@ -13,3 +13,16 @@ middleware is anything btw req and res to .next() is really middleware (route ha
 npm i cors
 const cors = require('cors'); in server.js
 come as soon as possible
+if you are using open to to public, this is fine - public API
+can create a whitelist of domains - array
+-whatever your .com is, whatever web application domain that will access this backend node server
+-to include a live server (go live in the bottom right corner of vsCode)
+-http://127.0.0.1:5500
+-the 5500 is the port - maybe as I am building my react app, I am running in on this port, 5500, or a diff port on localhost
+-IP address 127.0.0.1 is the same as having localhost there 
+-can take out the localhost domains after development, leave in whatever domains should be able to access data
+
+this is the allow list that cors will not prevent
+need to create function that checks to see if the request is coming from one of the allowed domains
+all containted within the corsOptions
+-origin takes an anonymous funtion, and an origin
