@@ -17,3 +17,10 @@
 20220817	07:51:42	a8ac1a72-3d04-4cf1-9215-641bf97a4a16	GET	undefined	/
 20220817	07:51:43	41f1bb7e-e916-4396-b55b-9155769341ca	GET	undefined	/css/style.css
 20220817	07:51:43	da22652b-3664-4371-a385-e959406f057e	GET	undefined	/favicon.ico
+20220822	07:22:43	1d14b4f2-a9a7-4b64-a9cd-595ef9b78064	GET	undefined	/
+20220822	07:22:44	6456fac5-e973-4ace-9fe9-99b5a7defda5	GET	undefined	/css/style.css
+20220822	07:22:44	8904ce7f-f26d-4219-b493-7002073f255d	GET	undefined	/favicon.ico
+20220822	07:22:47	68d0e660-125f-4a55-88ba-618b4a8f4a2c	GET	undefined	/
+20220822	07:22:47	0259a7e5-8fd1-40d3-b248-035709c72bf2	GET	undefined	/css/style.css
+20220822	07:29:33	447b5174-02cb-49f8-9c28-ec44da2374e9	GET	undefined	/richard
+20220822	07:29:33	91a0f850-c60f-4ecc-a907-75705b05d6ff	GET	undefined	/css/style.css

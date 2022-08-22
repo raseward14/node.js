@@ -85,12 +85,19 @@ const three = (req, res) => {
 // the html is optional here
 app.get('/chain(.html)?', [one, two, three]);
 
-// a '/' followed by anything will default to this route
-app.get('/*', (req, res) => {
-    res.status(404).sendFile(path.join(__dirname, 'views', '404.html')); // express will send a 404 to tell you it cant find what its looking for, even if we dont supply a code
-    // it wont send a 404 status code, it will send a 200 bc its actually successfully finding our 404 page, serving exactly what we told it to
-    // chain in the .status(404) method
+// app.use('/') could specify everything that came in from slash or root - does not accept regex, overall more likely to be used for middlewar
+// app.all is used for routing and will be applied to all http methods - does accept regex
+// anything that made it here should get the 404 page
+app.all('*', (req, res) => {
+    res.status(404).sendFile(path.join(__dirname, 'views', '404.html'));
 })
+
+// a '/' followed by anything will default to this route
+// app.get('/*', (req, res) => {
+//     res.status(404).sendFile(path.join(__dirname, 'views', '404.html')); // express will send a 404 to tell you it cant find what its looking for, even if we dont supply a code
+//     // it wont send a 404 status code, it will send a 200 bc its actually successfully finding our 404 page, serving exactly what we told it to
+//     // chain in the .status(404) method
+// })
 
 // this needs to go at the end so that all routes have been tried before throwing this error
 // app.use(function (err, req, res, next) {
