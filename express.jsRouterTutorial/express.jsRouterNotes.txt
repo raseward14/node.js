@@ -1,0 +1,3 @@
+can break our routes out into individual routers, mini servers for each individual route, or mini apps as we create our app with express - mini apps - will refer to them as routes
+
+inside the routes directory, we can create routes for each route we are handling

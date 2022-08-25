@@ -39,7 +39,12 @@ app.use(express.json());
 // the public folder is what we are going to put all of those static files (images) in so that they are available to the public
 // this is our set of directions so the app can find out static files
 // this is applied before our routes, it will search the public directory before it moves to these other routes
-app.use(express.static(path.join(__dirname, '/public')));
+app.use('/', express.static(path.join(__dirname, '/public')));
+app.use('/subdir', express.static(path.join(__dirname, '/public')));
+// 3:06:22
+
+// this will direct any request to the subdir, to the router, instead of the routes that we are providing below
+app.use('/subdir', require('./routes/subdir'))
 
 // must begin with a slash, end with a slash, or be index.html - express supports regular expressions, the .html is optional
 app.get('^/$|index(.html)?', (req, res) => {
