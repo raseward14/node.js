@@ -65,3 +65,8 @@
 20220829	07:57:11	7d427343-870d-4961-8788-36f6218a1144	GET	undefined	/img/angkorWat.jpg
 20220829	07:57:18	8c04f135-f5d9-4ae7-9c8d-79d8de4ee3c4	GET	undefined	/index
 20220829	07:57:18	88664e90-6cb1-4404-abd1-21abc51fbb4c	GET	undefined	/css/style.css
+20220830	07:34:55	48f07796-1ef3-4b0f-99a8-87d77ce8a108	GET	undefined	/
+20220830	07:34:56	55fa4105-910b-498e-bae4-c95106eaf513	GET	undefined	/css/style.css
+20220830	07:34:56	3860cc81-845b-42c4-aa05-3fa84e539c37	GET	undefined	/favicon.ico
+20220830	07:35:43	81980f81-aa14-48bc-aa34-1d6244bc4ba5	GET	undefined	/richard
+20220830	07:35:43	d0a3d896-919b-4632-9a0e-8f50394565d5	GET	undefined	/css/style.css
