@@ -1,0 +1,6 @@
+1. user authorization requires 2 routes
+    a. registration route -> to register a new user account
+    b. authorization route -> to authorize a user after they have created an account
+2. controllers folder - where we handle the routes and really what we do with them - finished with the register controllers
+3. now we need to create a new route for this
+4. now in our server.js, add this route at the bottom of our other routes
