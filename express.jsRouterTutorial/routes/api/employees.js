@@ -32,6 +32,5 @@ router.route('/:id')
         // refer to the named parameter with req.params. whatever the name of the parameter is
         res.json({ "id": req.params.id });
     });
-// 3:19:16
 
 module.exports = router;
