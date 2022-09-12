@@ -33,8 +33,8 @@ app.all('*', (req, res) => {
     } else if (req.accepts('json')) {
         res.json({ error: "404 Not Found" });
     } else {
-        res.type('txt').send("404 Not Found")
-    }
+        res.type('txt').send("404 Not Found");
+    };
 })
 
 app.use(errorHandler);

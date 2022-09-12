@@ -14,7 +14,7 @@ const bcrypt = require('bcrypt');
 // handler for new user info that we will receive at this register route
 const handleNewUser = async (req, res) => {
     // the request with have a user and a pw, lets destructure that from the req body
-    const { user, pwd } = req.body
+    const { user, pwd } = req.body;
     // 400 http status code, bad requeset
     if (!user || !pwd) return res.status(400).json({ 'message': 'Username and password are required'});
     // check for duplicate usernames in the database
@@ -32,11 +32,11 @@ const handleNewUser = async (req, res) => {
         // write to the json file - our db in this simulation
         await fsPromises.writeFile(
             // this will overwrite any existing users.json file there
-            path.join(__dirname, '../', 'model', 'users.json'),
+            path.join(__dirname, '..', 'model', 'users.json'),
             JSON.stringify(usersDB.users)
         );
         console.log(usersDB.users);
-        res.status(201).json({ 'success': `New user ${username} created!`})
+        res.status(201).json({ 'success': `New user ${user} created!`})
     } catch (err) {
         res.status(500).json({ 'message': err.message })
     }
