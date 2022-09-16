@@ -1,0 +1,29 @@
+protected routes
+Node & Express web API: JWT means- JSON Web Token
+form or user identification after the initial user authentication takes place
+when user completes their authentication, REST API will issue client application an access token & a refresh token
+access token = short time before it expires (5 to 15 minutes)
+refresh token = longer duration before it expires (several hours, a day, or even days)
+
+Hazards
+XSS: Cross-site scripting
+CSRF: Cross-site request forgery
+
+API sends & receives access tokens as JSON data
+to avoid the previous risks
+front end client applications recommended to only store access tokens in memory, so the memory will be automatically lost when the app is closed
+should not be stored in localStorage or a cookie
+if you can store it somewhere with JavaScript, a hacker can also retrieve it with JavaScript
+keep access tokens in memory/ current application state
+
+API will issue refresh tokens as HTTPOnly cookie
+Not accessible with JavaScript
+must have expiry at some point - requires user to log in again
+refresh tokens should not have the ability to issue new refresh tokens - grants indefinite access if it falls into the wrong hands
+
+ACCESS TOKEN:
+Issued at user Authorization
+users application uses for RESTAPIs protected routes access until it expires
+verified with middleware after each request
+New token issued at refresh request to REST API refresh API endpoint
+4:12:00

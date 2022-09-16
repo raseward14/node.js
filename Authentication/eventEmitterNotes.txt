@@ -1,4 +1,0 @@
-thisis a common core module in node.js
-
-\t creates a tab
-\n creates a line break
