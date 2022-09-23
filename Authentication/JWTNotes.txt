@@ -34,3 +34,20 @@ ACCESS TOKEN:
         -refresh tokens must be allowed to expire so indefinite access cannot be gained
 
 3. refresh token also issued at user authorization
+
+*NODE PACKAGES WE need
+1. dotenv
+2. jsonwebtoken
+3. cookie-parser
+
+open terminal window, type node - now we are running node
+type this
+require('crypto').randomBytes(64).toString('hex')
+gives us a random crypto bytes string that we can use as our access token
+
+copy it - no quotes 
+use as access_token in .env file
+do the same to generate a refresh token
+
+ctrl+c twice exits node at the command line
+4:16:20
