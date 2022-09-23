@@ -21,9 +21,16 @@ Not accessible with JavaScript
 must have expiry at some point - requires user to log in again
 refresh tokens should not have the ability to issue new refresh tokens - grants indefinite access if it falls into the wrong hands
 
+*OVERALL PROCESS
+
 ACCESS TOKEN:
-Issued at user Authorization
-users application uses for RESTAPIs protected routes access until it expires
-verified with middleware after each request
-New token issued at refresh request to REST API refresh API endpoint
-4:12:00
+1. Issued at user Authorization
+        -USERS APPLICATION can then access our RESTAPIs protected routes with access token access until it expires
+        API verifies access token with middleware every time the access token is used to make a request
+
+2. when the access token does expire, the users application will need to send our refresh token to our APIs refresh endpoint to get a new access token
+        -RESTAPIs endpoint will verify the token, and cross reference the refresh token in our database
+        -storing a reference to the refresh token in the database will allow refresh tokens to be terminated early if the user decides to log out
+        -refresh tokens must be allowed to expire so indefinite access cannot be gained
+
+3. refresh token also issued at user authorization
