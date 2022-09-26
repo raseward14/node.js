@@ -50,4 +50,10 @@ use as access_token in .env file
 do the same to generate a refresh token
 
 ctrl+c twice exits node at the command line
-4:16:20
+
+add .env to the .gitignore file
+dont want to send .env file to github
+keep in dev environment
+when you host somewhere, whichever host you have, should have a way to put the environment variables into their hosting service
+
+head to authController, require jwt and dotenv
