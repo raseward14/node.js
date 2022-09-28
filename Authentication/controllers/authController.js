@@ -50,8 +50,19 @@ const handleLogin = async (req, res) => {
             path.join(__dirname, '..', 'model', 'users.json'),
             JSON.stringify(usersDB.users)
         );
-        
-        res.json({ 'success': `User ${user} is logged in!`})
+        // we need to send both the refresh token & access token to the user
+        // easy part is we can send the accessToken as JSON
+        // in the front end, want to store this access token in memory - not secure in localStorage
+        // by keeping it in memory, you are not storing it anywhere vulnerable - in production, we'd give it around a 15m expiration
+        // we want to send the refreshToken as a cookie - httpOnly is not available to JavaScript
+        // jwt is the name, then we pass refreshToken itself, and an options object
+        // max age - we are setting one day in milliseconds - thats the max age of the cookie
+        // httpOnly cookie is not available to JavaScript
+        // sending refreshToken in a cookie that is httpOnly
+        // sending accessToken as JSON that the front end developer can grab
+        // storing the refresh token in the database when it is cross referenced to create another access token
+        res.cookie('jwt', refreshToken, { httpOnly: true, maxAge: 24 * 60 * 60 * 1000 });
+        res.json({ accessToken })
     } else {
         res.sendStatus(401); // Unauthorized
     }
