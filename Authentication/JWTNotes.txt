@@ -57,3 +57,6 @@ keep in dev environment
 when you host somewhere, whichever host you have, should have a way to put the environment variables into their hosting service
 
 head to authController, require jwt and dotenv
+
+for the refresh token controller, in server.js, or whereever we have the verifyJWT working, we need to require:
+const cookieParser = require('cookie-parser');

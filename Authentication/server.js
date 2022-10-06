@@ -5,6 +5,8 @@ const cors = require('cors');
 const corsOptions = require('./config/corsOptions')
 const { logger } = require('./middleware/logEvents');
 const errorHandler = require('./middleware/errorHandler');
+const verifyJWT = require('./middleware/verifyJWT');
+const cookieParser = require('cookie-parser');
 
 const PORT = process.env.PORT || 3500;
 
@@ -18,6 +20,10 @@ app.use(express.urlencoded({ extended: false }));
 
 app.use(express.json());
 
+// middleware for cookies
+app.use(cookieParser());
+// 6:50:41
+
 // serve static files
 app.use('/', express.static(path.join(__dirname, '/public')));
 
@@ -25,6 +31,9 @@ app.use('/', express.static(path.join(__dirname, '/public')));
 app.use('/', require('./routes/root'));
 app.use('/register', require('./routes/register'));
 app.use('/auth', require('./routes/auth'));
+
+// this works like a waterfall, everything after this line will need to pass through verifyJWT middleware before executing
+app.use(verifyJWT);
 app.use('/employees', require('./routes/api/employees'));
 
 app.all('*', (req, res) => {
