@@ -60,3 +60,5 @@ head to authController, require jwt and dotenv
 
 for the refresh token controller, in server.js, or whereever we have the verifyJWT working, we need to require:
 const cookieParser = require('cookie-parser');
+
+for refreshTokenController, copy authController, we will not need bcrypt

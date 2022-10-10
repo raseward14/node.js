@@ -18,11 +18,12 @@ app.use(cors(corsOptions));
 
 app.use(express.urlencoded({ extended: false }));
 
+// built in middleware for JSON
 app.use(express.json());
 
 // middleware for cookies
 app.use(cookieParser());
-// 6:50:41
+
 
 // serve static files
 app.use('/', express.static(path.join(__dirname, '/public')));
@@ -31,6 +32,9 @@ app.use('/', express.static(path.join(__dirname, '/public')));
 app.use('/', require('./routes/root'));
 app.use('/register', require('./routes/register'));
 app.use('/auth', require('./routes/auth'));
+// this will issue a new accessToken once the accessToken has expired
+app.use('/refresh', require('./routes/refresh'));
+app.use('/logout', require('./routes/logout'));
 
 // this works like a waterfall, everything after this line will need to pass through verifyJWT middleware before executing
 app.use(verifyJWT);
